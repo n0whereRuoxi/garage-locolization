@@ -1,0 +1,6 @@
+framework module HCKalmanFilter {
+  umbrella header "HCKalmanFilter-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,20 @@
+PODS:
+  - HCKalmanFilter (1.2.1):
+    - Surge (~> 2.0.0)
+  - Surge (2.0.0)
+
+DEPENDENCIES:
+  - HCKalmanFilter
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - HCKalmanFilter
+    - Surge
+
+SPEC CHECKSUMS:
+  HCKalmanFilter: e44b0885101e68f5e1ffefa29efab12c65c301d6
+  Surge: 1f0286bc5f0fe4283f3455479895bf85c7ef7760
+
+PODFILE CHECKSUM: e283123d8b23904c799a8f7d46c0d26de64b729b
+
+COCOAPODS: 1.6.1
