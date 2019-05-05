@@ -16,12 +16,7 @@
 		B40147A72262C849009D5E18 /* mapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40147A62262C849009D5E18 /* mapUITests.swift */; };
 		B463827222638B3F00CE1DE6 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B463827122638B3F00CE1DE6 /* Media.xcassets */; };
 		B47327A2227A2F000050A558 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B47327A1227A2F000050A558 /* CoreMotion.framework */; };
-		B49E542B227B435C00F0B8DC /* KalmanFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49E542A227B435B00F0B8DC /* KalmanFilter.swift */; };
-		B49E5431227B436700F0B8DC /* RawFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49E542C227B436600F0B8DC /* RawFilter.swift */; };
 		B49E5432227B436700F0B8DC /* DataProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49E542D227B436700F0B8DC /* DataProcessor.swift */; };
-		B49E5433227B436700F0B8DC /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49E542E227B436700F0B8DC /* Utilities.swift */; };
-		B49E5434227B436700F0B8DC /* ThreePointFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49E542F227B436700F0B8DC /* ThreePointFilter.swift */; };
-		B49E5435227B436700F0B8DC /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49E5430227B436700F0B8DC /* Filter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,12 +55,7 @@
 		B40147B62262F88E009D5E18 /* Location.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Location.gpx; sourceTree = "<group>"; };
 		B463827122638B3F00CE1DE6 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = Assets.xcassets/Media.xcassets; sourceTree = "<group>"; };
 		B47327A1227A2F000050A558 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
-		B49E542A227B435B00F0B8DC /* KalmanFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KalmanFilter.swift; sourceTree = "<group>"; };
-		B49E542C227B436600F0B8DC /* RawFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RawFilter.swift; sourceTree = "<group>"; };
 		B49E542D227B436700F0B8DC /* DataProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProcessor.swift; sourceTree = "<group>"; };
-		B49E542E227B436700F0B8DC /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
-		B49E542F227B436700F0B8DC /* ThreePointFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThreePointFilter.swift; sourceTree = "<group>"; };
-		B49E5430227B436700F0B8DC /* Filter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,7 +106,6 @@
 		B401477A2262C847009D5E18 = {
 			isa = PBXGroup;
 			children = (
-				B49E542A227B435B00F0B8DC /* KalmanFilter.swift */,
 				B40147852262C847009D5E18 /* map */,
 				B401479A2262C849009D5E18 /* mapTests */,
 				B40147A52262C849009D5E18 /* mapUITests */,
@@ -140,10 +129,6 @@
 			isa = PBXGroup;
 			children = (
 				B49E542D227B436700F0B8DC /* DataProcessor.swift */,
-				B49E5430227B436700F0B8DC /* Filter.swift */,
-				B49E542C227B436600F0B8DC /* RawFilter.swift */,
-				B49E542F227B436700F0B8DC /* ThreePointFilter.swift */,
-				B49E542E227B436700F0B8DC /* Utilities.swift */,
 				B40147862262C848009D5E18 /* AppDelegate.swift */,
 				B40147882262C848009D5E18 /* ViewController.swift */,
 				B401478A2262C848009D5E18 /* Main.storyboard */,
@@ -355,13 +340,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B49E5433227B436700F0B8DC /* Utilities.swift in Sources */,
-				B49E542B227B435C00F0B8DC /* KalmanFilter.swift in Sources */,
 				B40147892262C848009D5E18 /* ViewController.swift in Sources */,
-				B49E5431227B436700F0B8DC /* RawFilter.swift in Sources */,
 				B49E5432227B436700F0B8DC /* DataProcessor.swift in Sources */,
-				B49E5435227B436700F0B8DC /* Filter.swift in Sources */,
-				B49E5434227B436700F0B8DC /* ThreePointFilter.swift in Sources */,
 				B40147872262C848009D5E18 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

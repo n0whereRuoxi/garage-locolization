@@ -11,6 +11,36 @@ import CoreMotion
 import HCKalmanFilter
 import CoreLocation
 
+struct System {
+    var accelerate = ThreeAxesSystemDouble()
+    var velocity = ThreeAxesSystemDouble()
+    var distance = ThreeAxesSystemDouble()
+    var rotation = ThreeAxesSystemDouble()
+    
+    mutating func reset() {
+        accelerate.x = 0.0
+        accelerate.y = 0.0
+        accelerate.z = 0.0
+        
+        velocity.x = 0.0
+        velocity.y = 0.0
+        velocity.z = 0.0
+        
+        distance.x = 0.0
+        distance.y = 0.0
+        distance.z = 0.0
+    }
+}
+
+struct ThreeAxesSystemDouble {
+    var x = 0.0
+    var y = 0.0
+    var z = 0.0
+    var roll = 0.0
+    var pitch = 0.0
+    var yaw = 0.0
+}
+
 protocol DataProcessorDelegate {
     func sendingNewData(person: DataProcessor, type: speedDataType, data: ThreeAxesSystemDouble)
     func sendingNewStatus(person: DataProcessor, status: String)
@@ -63,11 +93,6 @@ class DataProcessor {
     var cur_altitude = 0.0
     var last_floor_altitude = 0.0
     
-    // MARK: floor change from acceleration
-    let velocity_z_upperbound = 5.0
-    let velocity_z_lowerbound = 0.1
-    var velocity_pending_floor_change = 0
-    
     // MARK: floor change from rotation
     var initial_pitch: Double?
     let pitch_upperbound = 20.0 * Double.pi / 180
@@ -89,7 +114,6 @@ class DataProcessor {
                 print("\(String(describing: error))")
             }
         })
-//        motionManager.deviceMotion.at
         
         motionActivityManager.startActivityUpdates(to: OperationQueue.current!) { (motion) in
             if motion?.stationary == false {
@@ -154,24 +178,6 @@ class DataProcessor {
         newData(type: speedDataType.accelerate, sensorData: absSys.accelerate)
         newData(type: speedDataType.velocity, sensorData: absSys.velocity)
         newData(type: speedDataType.distance, sensorData: absSys.distance)
-        
-        
-        // Floor change from acceleration
-//        delegate?.sendingFloorChangeSourceData(source: .acceleration, val: absSys.velocity.z)
-//
-//        if fabs(absSys.velocity.z) > velocity_z_upperbound {
-//            velocity_pending_floor_change = absSys.velocity.z > 0 ? 1 : -1
-//        }
-//
-//        if fabs(absSys.velocity.z) < velocity_z_lowerbound && velocity_pending_floor_change != 0 {
-//            delegate?.sendingFloorChange(source: .acceleration, change: velocity_pending_floor_change)
-//            absSys.velocity.z = 0
-//            velocity_pending_floor_change = 0
-//        }
-        
-//        absSys.accelerate.x = 0
-//        absSys.accelerate.y = 0
-//        absSys.accelerate.z = 0
     }
     
     func determineVelocityAndCoculateDistance(delta_ts: Double) {
