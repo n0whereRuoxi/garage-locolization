@@ -1,11 +1,3 @@
-//
-//  DataProcessor.swift
-//  ACC
-//
-//  Created by Hung-Yun Liao on 6/29/16.
-//  Copyright © 2016 Hung-Yun Liao. All rights reserved.
-//
-
 import Foundation
 import CoreMotion
 import HCKalmanFilter
@@ -89,14 +81,14 @@ class DataProcessor {
     
     // MARK: floor change from altitude
     let altimeter = CMAltimeter()
-    let floor_height_lowerbound = 3.0
+    let floor_height_lowerbound = 2.75
     var cur_altitude = 0.0
     var last_floor_altitude = 0.0
     
     // MARK: floor change from rotation
     var initial_pitch: Double?
-    let pitch_upperbound = 20.0 * Double.pi / 180
-    let pitch_lowerbound = 5.0 * Double.pi / 180
+    let pitch_upperbound = 3.0 * Double.pi / 180
+    let pitch_lowerbound = 1.0 * Double.pi / 180
     var pitch_pending_floor_change = 0
     
     var pre_ts:Double? = nil
